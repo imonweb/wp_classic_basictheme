@@ -7,13 +7,12 @@ body {
   margin: 0 auto;
   color: #333;
   background: #eee;
-  font: sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   padding: 20px;
+ 
 }
 
-h1.custom {
-  color: goldenrod;
-}
+ 

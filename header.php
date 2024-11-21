@@ -16,7 +16,16 @@
 
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+
+<?php 
+  if(is_home()) :
+    $basic_classes = array('basic-class', 'my-class');
+  else :
+    $basic_classes = array('no-basic-classes');
+  endif;
+?>
+
+<body <?php body_class( $basic_classes); ?>>
 <?php wp_body_open(); ?>
 
 <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
