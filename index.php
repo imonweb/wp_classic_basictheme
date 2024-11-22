@@ -4,7 +4,9 @@
 
 get_header(); ?>
 
-<?php 
+<div class="row">
+ <div class="col-sm-8">
+  <?php 
   if(have_posts()) : 
     while( have_posts() ) : the_post(); ?> 
 
@@ -12,8 +14,20 @@ get_header(); ?>
 
       
     <?php endwhile;
-  endif;
-?>
+    endif;
+  ?>
+ </div>
+
+
+
+
+
+<div class="col-sm-4">
+  <?php get_sidebar(); ?>
+</div>
+
+</div>
+
 
 <?php get_footer(); ?>
 
