@@ -28,4 +28,32 @@
 <body <?php body_class( $basic_classes); ?>>
 <?php wp_body_open(); ?>
 
-<?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="main-menu">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'main-menu',
+                'container_class' => 'collapse navbar-collapse',
+                'container_id'    => 'navbarNavDropdown',
+                'menu_class'      => 'navbar-nav ms-auto',
+                'fallback_cb'     => '',
+                'menu_id'         => 'main-menu',
+                'depth'           => 2,
+                'walker' => new bootstrap_5_wp_nav_menu_walker()
+            ));
+            ?>
+        </div>
+    </div>
+          </nav>
+
+<?php // wp_nav_menu(array('theme_location' => 'primary')); ?>
+
+<?php // var_dump(get_custom_header(  )); ?>
+
+<img src="<?php header_image(); ?>" alt="" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
