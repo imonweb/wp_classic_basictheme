@@ -54,8 +54,13 @@ function basic_widget_setup() {
 add_action('widgets_init', 'basic_widget_setup');
 
 
+
+/*  Walker Class */
+require get_template_directory() . '/inc/walker.php';
+
+
 /*  Bootstrap Menu */
-require get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+// require get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
  
 // register a new menu
 register_nav_menu('main-menu', 'Main menu');

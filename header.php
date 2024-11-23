@@ -38,6 +38,7 @@
         <div class="collapse navbar-collapse" id="main-menu">
            <!-- <div class="navbar-nav"> -->
             <?php
+           
             wp_nav_menu(array(
                 'theme_location' => 'main-menu',
                 'container_class' => 'collapse navbar-collapse',
@@ -48,6 +49,15 @@
                 'depth'           => 2,
                 'walker' => new bootstrap_5_wp_nav_menu_walker()
             ));
+          
+
+                // wp_nav_menu(array(
+								// 	'theme_location' => 'primary',
+								// 	'container' => false,
+								// 	'menu_class' => 'nav navbar-nav navbar-right',
+								// 	'walker' => new Walker_Nav_Primary()
+								// 	)
+								// );
             ?>
               <!-- </div> -->
             <?php get_search_form(); ?>
