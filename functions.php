@@ -54,9 +54,50 @@ function basic_widget_setup() {
 add_action('widgets_init', 'basic_widget_setup');
 
 
+/*  Custom Post Types */
+function basic_custom_post_type() {
+  $labels = array(
+    'show_in_rest'  => true,
+    'name'          => 'Portfolio',
+    'singular_name' => 'Portfolio',
+    'add_new_item'  => 'Add Portfolio Item',
+    'all_items'     => 'All Items',
+    // 'add_new_item'  => 'Add Item',
+    'edit_item'     => 'Edit Item',
+    'new_item'      => 'New Item',
+    'view_item'     => 'View Item',
+    'search_item'   => 'Search Portfolio',
+    'not_found'     => 'Not Items Found',
+    'not_found_in_trash'  =>  'No items found in trash',
+    'parent_item_colon'   =>  'Parent Item'
+  );
+  $args = array(
+    'labels'        =>  $labels,
+    'public'        =>  true,
+    'has_archive'   =>  true,
+    'publicly_queryable'  =>  true,
+    'query_var'     =>  true,
+    'rewrite'       =>  true,
+    'capability_type' =>  'post',
+    'hierarchical'    =>  false,
+    'supports'       =>  array(
+        'title',
+        'editor',
+        'excerpt',
+        'thumbnail',
+        'revisions',
+    ),
+    'taxonomies'    => array('category', 'post_tag'),
+    'menu_position' => 5,
+    'exclude_from_search' => false
+  );
+  register_post_type('portfolio', $args);
+}
+add_action('init', 'basic_custom_post_type');
+ 
 
 /*  Walker Class */
-require get_template_directory() . '/inc/walker.php';
+// require get_template_directory() . '/inc/walker.php';
 
 
 /*  Bootstrap Menu */
