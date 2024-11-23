@@ -11,13 +11,13 @@ get_header(); ?>
 
     while( have_posts() ) : the_post(); ?> 
     
-      <?php get_template_part('content', get_post_format()); ?>
+      <?php get_template_part('content', 'search'); ?>
     
     <?php endwhile;
     
   endif;
   ?>
-  <?php the_title( sprintf('<h1 class="entry-title"><a href="%s">', esc_url( get_permalink() ) ),'</a></h1>' ); ?>
+ 
  </div>
 
 

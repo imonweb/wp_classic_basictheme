@@ -31,6 +31,7 @@ add_action('init', 'basic_theme_setup');
 add_theme_support('custom-background');
 add_theme_support('custom-header');
 add_theme_support('post-thumbnails');
+add_theme_support('html5', array('search-form'));
 
 add_theme_support('post-formats', array('aside', 'image', 'video'));
 
@@ -51,9 +52,6 @@ function basic_widget_setup() {
   );
 }
 add_action('widgets_init', 'basic_widget_setup');
-
-
-
 
 
 /*  Bootstrap Menu */

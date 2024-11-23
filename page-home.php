@@ -4,13 +4,30 @@
 
  <div class="col-sm-12">
   <?php 
-    $lastBlog = new WP_Query('type=post&posts_per_page=1');
+
+    $args_cat = array(
+      'include' => '85, 82, 79'
+    );
+
+    $categories = get_categories($args_cat);
+    foreach ($categories as $category) :
+
+    endforeach;
+
+    $args = array(
+      'type' => 'post',
+      'posts_per_page' => 3,
+      'category__in' => array(85, 82, 79 ),
+      'category__not_in' => array(8)
+    );
+
+    $lastBlog = new WP_Query($args);
 
     if($lastBlog->have_posts()) : 
 
       while( $lastBlog->have_posts() ) : $lastBlog->the_post(); ?> 
     
-        <?php get_template_part('content', get_post_format()); ?>
+        <?php get_template_part('content', 'featured'); ?>
     
       <?php endwhile;
     
