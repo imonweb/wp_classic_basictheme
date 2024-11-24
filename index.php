@@ -22,8 +22,6 @@ get_header(); ?>
 
 
 
-
-
 <!-- <div class="col-sm-4"> -->
   <?php // get_sidebar(); ?>
 <!-- </div> -->
